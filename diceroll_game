@@ -1,0 +1,69 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <ctype.h>
+#include <string.h>
+
+int main()
+{
+int diceroll1, diceroll2, diceroll3, diceroll4, diceroll5, diceroll6;
+int roll_total1, roll_total2;
+char roll_compare;
+char answer1;
+char answer2;
+answer2='y';
+
+while(answer2=='y'){
+
+printf("enter 'y' to roll the dice \n");
+scanf(" %c", &answer2);
+
+diceroll1 = ( rand()%6) + 1;
+printf("%d \n", diceroll1);
+
+diceroll2 = ( rand()%6) + 1;
+printf("%d \n", diceroll2);
+
+diceroll3 = ( rand()%6) + 1;
+printf("%d \n", diceroll3);
+
+roll_total1 = (diceroll1 + diceroll2 + diceroll3);
+printf("Your first roll total score is %d \n", roll_total1);
+
+printf("Will your next roll be high 'H', lower 'L', or even 'E'?");
+scanf(" %c", &answer1);
+
+diceroll4 = ( rand()%6) + 1;
+printf("%d \n", diceroll4);
+
+diceroll5 = ( rand()%6) + 1;
+printf("%d \n", diceroll5);
+
+diceroll6 = ( rand()%6) + 1;
+printf("%d \n", diceroll6);
+
+roll_total2 = (diceroll4 + diceroll5 + diceroll6);
+printf("Your second roll total score is %d \n", roll_total2);
+
+if(roll_total1 > roll_total2){
+    roll_compare = 'l';
+}
+if(roll_total1 < roll_total2){
+    roll_compare = 'h';
+}
+if(roll_total1 == roll_total2){
+    roll_compare = 'e';
+}
+
+if (answer1 == roll_compare){
+    printf("You are a champion! \n");
+}
+else{
+    printf("You Lose! \n");
+}
+printf("Would you like another roll?\n");
+scanf(" %c",&answer2);
+}
+
+return 0;
+}
