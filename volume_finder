@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<math.h>
+
+int main()
+{
+    float circ_radius,cyl_height,tri_height,tri_base,tri_depth,rec_length,rec_width,rec_depth;
+    char answer1,answer2;
+    float sph_volume,Pi,rec_volume,cyl_volume,tri_volume;
+    Pi = 3.14159265359;
+    answer2 = 'y';
+while (answer2 == 'y'){
+    printf("All measurements are in centimetres\n\nPlease enter the measurement without the unit - ie. 3 and not 3cm\n\n");
+    printf("Do you want to find the volume of:\n a Sphere (enter s),\n a Cylinder (enter c),\n a Rectangular Prism (enter r),\n or a Triangular Prism (enter t)?\n");
+    scanf(" %c",&answer1);
+        if (answer1 == 's'){
+        printf("Please enter the radius of your Sphere\n");
+        scanf(" %f", &circ_radius);
+        sph_volume = powf(circ_radius,3)*(4.0/3.0)*Pi;
+        printf("Your Sphere has a volume of %f centimetres cubed\n", sph_volume);
+        }
+    else
+
+    if (answer1 == 'r'){
+        printf("Please enter the length of your Rectanglar Prism\n");
+        scanf(" %f", &rec_length);
+        printf("Please enter the width of your Rectanglar Prism\n");
+        scanf(" %f", &rec_width);
+        printf("Please enter the depth of your Rectanglar Prism\n");
+        scanf(" %f", &rec_depth);
+        rec_volume = rec_length * rec_width * rec_depth;
+        printf("Your Rectangular Prism has a volume of %f centimetres cubed\n", rec_volume);
+    }
+
+    else
+
+    if (answer1 == 'c')
+    {
+        printf("Please enter the radius of your Cylinder\n");
+        scanf(" %f", &circ_radius);
+
+        printf("Please enter the height of your Cylinder\n");
+        scanf(" %f", &cyl_height);
+
+        cyl_volume =  powf(circ_radius,2) * Pi * cyl_height;
+        printf("Your Cylinder has a volume of %f centimetres cubed\n", cyl_volume);
+
+    }
+
+    else {
+
+        printf("Please enter the base measurment of your Triangular Prism\n");
+        scanf(" %f", &tri_base);
+
+        printf("Please enter the height of your Triangular Prism\n");
+        scanf(" %f", &tri_height);
+
+        printf("Please enter the depth of your Triangular Prism\n");
+        scanf(" %f", &tri_depth);
+
+        tri_volume = tri_base * tri_height * tri_depth *0.5;
+        printf("Your Triangular Prism has a volume of %f centimetres cubed\n", tri_volume);
+
+    }
+
+printf("\nDo you wish to find another volume? y/n \n\n");
+scanf(" %c",&answer2);
+}
+
+    return 0;
+
+}
