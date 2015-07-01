@@ -32,6 +32,7 @@ printf("Your first roll total score is %d \n", roll_total1);
 
 printf("Will your next roll be high 'H', lower 'L', or even 'E'?");
 scanf(" %c", &answer1);
+answer1 = tolower(answer1);
 
 diceroll4 = ( rand()%6) + 1;
 printf("%d \n", diceroll4);
