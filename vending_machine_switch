@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   char choice = '0';
+   char answer2;
+   answer2='y';
+
+while(answer2=='y'){
+   printf("Please select your confectionary by entering the correct number: Snickers enter 1, Mars enter 2, Crunchie enter 3, Minty enter 4, Chewy enter 5, Healthy enter 6\n");
+   scanf(" %c", &choice);
+   switch(choice){
+    case '1'  :
+       printf("Enjoy your Snickers Bar\n");
+       break;
+    case '2'  :
+        printf("Enjoy your Mars Bar\n");
+       break;
+    case '3'  :
+        printf("Enjoy your Crunchie Bar\n");
+       break;
+    case '4'  :
+        printf("Enjoy your Minty Bar\n");
+       break;
+    case '5'  :
+        printf("Enjoy your Chewy Bar\n");
+       break;
+    case '6'  :
+        printf("Enjoy your Healthy Bar\n");
+       break;
+    default :
+       printf("You have entered the wrong number\n");
+       break;
+   }
+   printf("Would you like another choice?\n");
+   scanf(" %c",&answer2);
+}
+    return 0;
+}
