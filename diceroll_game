@@ -3,22 +3,24 @@
 #include <math.h>
 #include <ctype.h>
 #include <string.h>
+#include <time.h>
 
 int main()
 {
-int diceroll1, diceroll2, diceroll3, diceroll4, diceroll5, diceroll6;
-int roll_total1, roll_total2;
-char roll_compare;
-char answer1;
-char answer2;
-answer2='y';
+srand(time(NULL));//to seed random number generator
+int diceroll1, diceroll2, diceroll3, diceroll4, diceroll5, diceroll6;// dice rolls for two throws
+int roll_total1, roll_total2;// dice roll totals
+char roll_compare;// variable tp allow a comparison to answer1
+char answer1;//answer one is for the guessing part of this game
+char answer2;//answer two is to keep the game going
+answer2='y';//variable to keep the while loop going
 
 while(answer2=='y'){
 
 printf("enter 'y' to roll the dice \n");
 scanf(" %c", &answer2);
 
-diceroll1 = ( rand()%6) + 1;
+diceroll1 = ( rand()%6) + 1;//first throw of dice rolls
 printf("%d \n", diceroll1);
 
 diceroll2 = ( rand()%6) + 1;
@@ -34,7 +36,7 @@ printf("Will your next roll be high 'H', lower 'L', or even 'E'?");
 scanf(" %c", &answer1);
 answer1 = tolower(answer1);
 
-diceroll4 = ( rand()%6) + 1;
+diceroll4 = ( rand()%6) + 1;//second throw of dice rolls
 printf("%d \n", diceroll4);
 
 diceroll5 = ( rand()%6) + 1;
@@ -46,7 +48,7 @@ printf("%d \n", diceroll6);
 roll_total2 = (diceroll4 + diceroll5 + diceroll6);
 printf("Your second roll total score is %d \n", roll_total2);
 
-if(roll_total1 > roll_total2){
+if(roll_total1 > roll_total2){//if statements to find the status of the second throw compared to the first
     roll_compare = 'l';
 }
 if(roll_total1 < roll_total2){
@@ -56,13 +58,13 @@ if(roll_total1 == roll_total2){
     roll_compare = 'e';
 }
 
-if (answer1 == roll_compare){
+if (answer1 == roll_compare){//comparison between the actual result and the player's guess
     printf("You are a champion! \n");
 }
 else{
     printf("You Lose! \n");
 }
-printf("Would you like another roll?\n");
+printf("Would you like another roll?\n");//question to reloop the program
 scanf(" %c",&answer2);
 }
 
