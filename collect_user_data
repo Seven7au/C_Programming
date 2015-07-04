@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+void user_data1(int user_id);
+void user_data2(char user_firstname[25]);
+void user_data3(char user_surname[25]);
+
+
+int main()
+{
+int user_id = 1;
+char user_firstname[25] = "Bob";
+char user_surname[25] = "Jones";
+
+FILE * fPointer;
+fPointer = fopen("userdata.txt", "a");
+
+printf("What is your user ID?\n");
+scanf(" %d",&user_id);
+
+printf("What is your first name?\n");
+scanf(" %s",user_firstname);
+
+printf("What is your surname?\n");
+scanf(" %s",user_surname);
+
+user_data1(user_id);
+user_data2(user_firstname);
+user_data3(user_surname);
+
+fprintf(fPointer,"\n%d,%s,%s",user_id,user_firstname,user_surname);
+
+fclose(fPointer);
+
+    return 0;
+}
+
+void user_data1(int user_id){
+
+printf("User ID is:\t\t%d\n", user_id);
+return;
+}
+
+void user_data2(char user_firstname[25]){
+
+printf("User Firstname is:\t %s\n", user_firstname);
+return;
+}
+
+void user_data3(char user_surname[25]){
+
+printf("User Surnmae is:\t %s\n", user_surname);
+return;
+}
